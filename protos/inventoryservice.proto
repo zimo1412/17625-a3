@@ -10,8 +10,6 @@ message CreateBookRequest {
 
 message CreateBookResponse {
     string ISBN = 1;
-    bool success = 2;
-    string message = 3;
 }
 
 message GetBookRequest {
@@ -20,8 +18,6 @@ message GetBookRequest {
 
 message GetBookResponse {
     optional book.Book book = 1;
-    bool success = 2;
-    string message = 3;
 }
 
 service InventoryService {

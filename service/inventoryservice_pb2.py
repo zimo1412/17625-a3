@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 import book_pb2 as book__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16inventoryservice.proto\x12%api_design.bookstore.inventoryservice\x1a\nbook.proto\"B\n\x11\x43reateBookRequest\x12-\n\x04\x62ook\x18\x01 \x01(\x0b\x32\x1f.api_design.bookstore.book.Book\"D\n\x12\x43reateBookResponse\x12\x0c\n\x04ISBN\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x12\x0f\n\x07message\x18\x03 \x01(\t\"\x1e\n\x0eGetBookRequest\x12\x0c\n\x04ISBN\x18\x01 \x01(\t\"p\n\x0fGetBookResponse\x12\x32\n\x04\x62ook\x18\x01 \x01(\x0b\x32\x1f.api_design.bookstore.book.BookH\x00\x88\x01\x01\x12\x0f\n\x07success\x18\x02 \x01(\x08\x12\x0f\n\x07message\x18\x03 \x01(\tB\x07\n\x05_book2\x90\x02\n\x10InventoryService\x12\x81\x01\n\nCreateBook\x12\x38.api_design.bookstore.inventoryservice.CreateBookRequest\x1a\x39.api_design.bookstore.inventoryservice.CreateBookResponse\x12x\n\x07GetBook\x12\x35.api_design.bookstore.inventoryservice.GetBookRequest\x1a\x36.api_design.bookstore.inventoryservice.GetBookResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16inventoryservice.proto\x12%api_design.bookstore.inventoryservice\x1a\nbook.proto\"B\n\x11\x43reateBookRequest\x12-\n\x04\x62ook\x18\x01 \x01(\x0b\x32\x1f.api_design.bookstore.book.Book\"\"\n\x12\x43reateBookResponse\x12\x0c\n\x04ISBN\x18\x01 \x01(\t\"\x1e\n\x0eGetBookRequest\x12\x0c\n\x04ISBN\x18\x01 \x01(\t\"N\n\x0fGetBookResponse\x12\x32\n\x04\x62ook\x18\x01 \x01(\x0b\x32\x1f.api_design.bookstore.book.BookH\x00\x88\x01\x01\x42\x07\n\x05_book2\x90\x02\n\x10InventoryService\x12\x81\x01\n\nCreateBook\x12\x38.api_design.bookstore.inventoryservice.CreateBookRequest\x1a\x39.api_design.bookstore.inventoryservice.CreateBookResponse\x12x\n\x07GetBook\x12\x35.api_design.bookstore.inventoryservice.GetBookRequest\x1a\x36.api_design.bookstore.inventoryservice.GetBookResponseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'inventoryservice_pb2', globals())
@@ -24,11 +24,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATEBOOKREQUEST._serialized_start=77
   _CREATEBOOKREQUEST._serialized_end=143
   _CREATEBOOKRESPONSE._serialized_start=145
-  _CREATEBOOKRESPONSE._serialized_end=213
-  _GETBOOKREQUEST._serialized_start=215
-  _GETBOOKREQUEST._serialized_end=245
-  _GETBOOKRESPONSE._serialized_start=247
-  _GETBOOKRESPONSE._serialized_end=359
-  _INVENTORYSERVICE._serialized_start=362
-  _INVENTORYSERVICE._serialized_end=634
+  _CREATEBOOKRESPONSE._serialized_end=179
+  _GETBOOKREQUEST._serialized_start=181
+  _GETBOOKREQUEST._serialized_end=211
+  _GETBOOKRESPONSE._serialized_start=213
+  _GETBOOKRESPONSE._serialized_end=291
+  _INVENTORYSERVICE._serialized_start=294
+  _INVENTORYSERVICE._serialized_end=566
 # @@protoc_insertion_point(module_scope)

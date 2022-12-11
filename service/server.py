@@ -19,12 +19,7 @@ class InventoryService(inventoryservice_pb2_grpc.InventoryServiceServicer):
         if not success:
             context.set_code(grpc.StatusCode.ALREADY_EXISTS)
             context.set_details(message)
-            return inventoryservice_pb2.CreateBookResponse(success=False)
-        return inventoryservice_pb2.CreateBookResponse(
-            ISBN=ISBN,
-            success=success,
-            message=message
-        )
+        return inventoryservice_pb2.CreateBookResponse(ISBN=ISBN)
 
     def GetBook(self, request, context):
         db = BookStore()
@@ -33,15 +28,7 @@ class InventoryService(inventoryservice_pb2_grpc.InventoryServiceServicer):
         if not success:
             context.set_code(grpc.StatusCode.NOT_FOUND)
             context.set_details(message)
-            return inventoryservice_pb2.GetBookResponse(
-                success=False,
-                message=message,
-            )
-        return inventoryservice_pb2.GetBookResponse(
-            book=book,
-            success=success,
-            message=message,
-        )
+        return inventoryservice_pb2.GetBookResponse(book=book)
 
 
 def serve():
