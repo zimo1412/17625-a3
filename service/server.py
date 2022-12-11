@@ -13,6 +13,7 @@ from database import BookStore
 
 class InventoryService(inventoryservice_pb2_grpc.InventoryServiceServicer):
     def CreateBook(self, request, context):
+        """Create a book in the bookstore."""
         db = BookStore()
         success, ISBN, message = db.create_book(request.book)
         logging.info(f"CreateBook: {success}, {ISBN}, {message}")
@@ -22,6 +23,7 @@ class InventoryService(inventoryservice_pb2_grpc.InventoryServiceServicer):
         return inventoryservice_pb2.CreateBookResponse(ISBN=ISBN)
 
     def GetBook(self, request, context):
+        """Get a book detail by ISBN from the bookstore."""
         db = BookStore()
         success, book, message = db.get_book(request.ISBN)
         logging.info(f"GetBook: {success}, {book}, {message}")
@@ -35,7 +37,7 @@ def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     inventoryservice_pb2_grpc.add_InventoryServiceServicer_to_server(InventoryService(), server)
     
-    # Reflection of service
+    # Reflection of service, so that Postman can auto detect the services
     SERVICE_NAMES = (
         inventoryservice_pb2.DESCRIPTOR.services_by_name['InventoryService'].full_name,
         reflection.SERVICE_NAME,
