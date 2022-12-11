@@ -34,3 +34,35 @@ Use the following command to compile the proto file to Python stubs (output to s
 ```
     python -m grpc_tools.protoc -I protos/ --python_out=service/ --grpc_python_out=service/ protos/inventoryservice.proto
 ```
+
+## Server
+
+To run the server, use the following command:
+
+```
+    python service/server.py
+```
+
+The default port is 50051.
+
+**The server gRPC was tested using Postman, and the screenshots is in the `screenshots/a3` folder.**
+
+## Client
+
+To run the client, use the following command:
+
+```
+    PYTHONPATH=service python client/get_book_titles.py
+```
+
+## Client Tests
+
+To run the tests, use the following command:
+
+```
+    PYTHONPATH=service:client python -m unittest client/test.py
+```
+
+Note: `test_get_book_titles_live_server` is a live server test, and it will fail if the server is not running.
+
+**The screenshots of client tests is in the `screenshots/a4` folder.**
