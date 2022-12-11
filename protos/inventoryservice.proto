@@ -11,7 +11,7 @@ message CreateBookRequest {
 message CreateBookResponse {
     string ISBN = 1;
     bool success = 2;
-    optional string error = 3;
+    string message = 3;
 }
 
 message GetBookRequest {
@@ -19,9 +19,9 @@ message GetBookRequest {
 }
 
 message GetBookResponse {
-    book.Book book = 1;
+    optional book.Book book = 1;
     bool success = 2;
-    optional string error = 3;
+    string message = 3;
 }
 
 service InventoryService {
