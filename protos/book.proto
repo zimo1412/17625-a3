@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package api_design.bookstore.book;
+
+message Book {
+    string ISBN = 1;
+    string title = 2;
+    string author = 3;
+
+    enum Genre {
+        SCIENCE_FICTION = 0;
+        HISTORY = 1;
+        BIOGRAPHY = 2;
+        FANTASY = 3;
+        OTHER = 4;
+    }
+
+    Genre genre = 4;
+
+    int32 publishing_year = 5;
+}
+
+message InventoryItem {
+    string inventory_id = 1;
+    oneof item {
+        // Could be extended to include other types of inventory items
+        Book book = 2;
+    }
+
+    enum Status {
+        AVAILABLE = 0;
+        TAKEN = 1;
+    }
+
+    Status status = 3;
+}

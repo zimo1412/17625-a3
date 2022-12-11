@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package api_design.bookstore.inventoryservice;
+
+import "book.proto";
+
+message CreateBookRequest {
+    book.Book book = 1;
+}
+
+message CreateBookResponse {
+    string ISBN = 1;
+    bool success = 2;
+    optional string error = 3;
+}
+
+message GetBookRequest {
+    string ISBN = 1;
+}
+
+message GetBookResponse {
+    book.Book book = 1;
+    bool success = 2;
+    optional string error = 3;
+}
+
+service InventoryService {
+    rpc CreateBook(CreateBookRequest) returns (CreateBookResponse);
+    rpc GetBook(GetBookRequest) returns (GetBookResponse);
+}

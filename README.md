@@ -12,3 +12,25 @@
     - inventory number - kind of, a primary key
     - a `Oneof` field, which can only refer to a Book object. In the future extensions, we might add more supported types.
     - status - an enum of "available", "taken"
+
+
+Use the following command to compile the proto file to Python stubs (output to service/)
+
+```
+    protoc -I protos/ --python_out=service/ protos/book.proto
+```
+
+## gRPC
+
+1. CreateBook
+   - input: Book
+   - output: ISBN, or error (if ISBN already exists)
+2. GetBook
+   - input: ISBN
+   - output: Book Details, or error (if ISBN does not exist)
+
+Use the following command to compile the proto file to Python stubs (output to service/)
+
+```
+    python -m grpc_tools.protoc -I protos/ --python_out=service/ --grpc_python_out=service/ protos/inventoryservice.proto
+```
